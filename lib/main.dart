@@ -1,53 +1,114 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Birthday Card',
+      title: 'My Business Card',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const MyHomePage(title: 'Birthday Card'),
+      home: BusinessCardScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class BusinessCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      backgroundColor: Color(0xFF40E0D0),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.network(
-              'https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fhappy-birthday-cupcake-celebration-message-160558421.jpg&tbnid=i1Jdd_RcGVs6IM&vet=12ahUKEwjZp9KP-Ib-AhWF-6QKHVWVAkQQMygJegUIARCGAg..i&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fhappy-birthday.html&docid=RrzE9GT-VHazwM&w=800&h=533&q=happy%20birthday&ved=2ahUKEwjZp9KP-Ib-AhWF-6QKHVWVAkQQMygJegUIARCGAg',
-              width: 200,
-              height: 200,
+            CircleAvatar(
+              radius: 50.0,
+              backgroundImage: AssetImage('assets/images/pic.jpg'),
             ),
-            const SizedBox(height: 20),
-            const Text(
-              'Happy Birthday',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            SizedBox(height: 10.0),
+            Text(
+              'Mariano Castellano',
+              style: TextStyle(
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontFamily: 'Pacifico', // Added cool font for name
+              ),
+            ),
+            SizedBox(height: 5.0),
+            Text(
+              'Flutter Developer',
+              style: TextStyle(
+                fontSize: 25.0,
+                fontWeight: FontWeight.normal,
+                color: Colors.grey[300],
+              ),
+            ),
+            Container(
+              width: 150,
+              child: Divider(
+                color: Colors.grey[300],
+                thickness: 1,
+              ),
+            ),
+
+            SizedBox(height: 10.0),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(0.0),
+              ),
+              width: 350.0,
+              height: 60.0,
+              child: Row(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(Icons.phone, color: Colors.teal, size: 30.0),
+                  ),
+                  SizedBox(width: 10.0),
+                  Text(
+                    '+9 5411 2345 6789',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(0.0),
+              ),
+              width: 350.0,
+              height: 60.0,
+              child: Row(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(Icons.mail, color: Colors.teal, size: 30.0),
+                  ),
+                  SizedBox(width: 10.0),
+                  Text(
+                    'mariano@email.com',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+
+
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
