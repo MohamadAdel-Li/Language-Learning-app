@@ -1,118 +1,1 @@
-import 'package:flutter/material.dart';
-
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'My Business Card',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: BusinessCardScreen(),
-    );
-  }
-}
-
-class BusinessCardScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFF40E0D0),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            CircleAvatar(
-              radius: 50.0,
-              backgroundImage: AssetImage('assets/images/pic.jpg'),
-            ),
-            SizedBox(height: 10.0),
-            Text(
-              'Mariano Castellano',
-              style: TextStyle(
-                fontSize: 28.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                fontFamily: 'Pacifico', // Added cool font for name
-              ),
-            ),
-            SizedBox(height: 5.0),
-            Text(
-              'Flutter Developer',
-              style: TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.normal,
-                color: Colors.grey[300],
-              ),
-            ),
-            Container(
-              width: 150,
-              child: Divider(
-                color: Colors.grey[300],
-                thickness: 1,
-              ),
-            ),
-
-            SizedBox(height: 10.0),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(0.0),
-              ),
-              width: 350.0,
-              height: 60.0,
-              child: Row(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Icon(Icons.phone, color: Colors.teal, size: 30.0),
-                  ),
-                  SizedBox(width: 10.0),
-                  Text(
-                    '+9 5411 2345 6789',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 20.0),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(0.0),
-              ),
-              width: 350.0,
-              height: 60.0,
-              child: Row(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Icon(Icons.mail, color: Colors.teal, size: 30.0),
-                  ),
-                  SizedBox(width: 10.0),
-                  Text(
-                    'mariano@email.com',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black,
-
-
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+import 'package:audioplayers/audioplayers.dart';import 'package:flutter/material.dart';void main() => runApp(LanguageLearningApp());class LanguageLearningApp extends StatelessWidget {  @override  Widget build(BuildContext context) {    return MaterialApp(      title: 'Language Learning App',      theme: ThemeData(        primarySwatch: Colors.brown,        visualDensity: VisualDensity.adaptivePlatformDensity,      ),      home: HomePage(),    );  }}class HomePage extends StatelessWidget {  @override  Widget build(BuildContext context) {    return Scaffold(      appBar: AppBar(        backgroundColor: Colors.brown[700],        title: Padding(          padding: const EdgeInsets.only(top: 8.0),          child: Text(            'Language Learning App',            style: TextStyle(              color: Colors.white,            ),          ),        ),        centerTitle: true,      ),      body: Container(        color: Colors.grey[400],        child: Column(          mainAxisAlignment: MainAxisAlignment.center,          children: [            Padding(              padding: const EdgeInsets.only(top: 16.0),              child: Text(                'Your way to learn Japanese',                style: TextStyle(                  fontSize: 24.0,                  fontWeight: FontWeight.bold,                  color: Colors.black,                ),              ),            ),            SizedBox(height: 16.0),            Expanded(              child: Column(                children: [                  GestureDetector(                    onTap: () {                      // Add navigation to other pages here                    },                    child: Container(                      height: 80.0,                      width: double.infinity,                      color: Colors.yellow[700],                      child: Padding(                        padding: const EdgeInsets.only(left: 16.0),                        child: Align(                          alignment: Alignment.centerLeft,                          child: Text(                            'Numbers',                            style: TextStyle(                              fontSize: 24.0,                              color: Colors.white,                            ),                          ),                        ),                      ),                    ),                  ),                  GestureDetector(                    onTap: () {                      Navigator.push(                        context,                        MaterialPageRoute(                          builder: (context) => FamilyMembersPage(),                        ),                      );                    },                    child: Container(                      height: 80.0,                      width: double.infinity,                      color: Colors.green[700],                      child: Padding(                        padding: const EdgeInsets.only(left: 16.0),                        child: Row(                          children: [                            SizedBox(width: 8.0),                            Text(                              'Family Members',                              style: TextStyle(                                fontSize: 24.0,                                color: Colors.white,                              ),                            ),                          ],                        ),                      ),                    ),                  ),                  GestureDetector(                    onTap: () {                      // Add navigation to other pages here                    },                    child: Container(                      height: 80.0,                      width: double.infinity,                      color: Colors.purple[700],                      child: Padding(                        padding: const EdgeInsets.only(left: 16.0),                        child: Align(                          alignment: Alignment.centerLeft,                          child: Text(                            'Colors',                            style: TextStyle(                              fontSize: 24.0,                              color: Colors.white,                            ),                          ),                        ),                      ),                    ),                  ),                ],              ),            ),          ],        ),      ),    );  }}class FamilyMembersPage extends StatelessWidget {  final List<String> _familyMemberNames = [    'Daughter',    'Father',    'Grandfather',    'Grandmother',    'Mother',    'Older Brother',    'Older Sister',    'Son',    'Younger Brother',    'Younger Sister',  ];  final List<String> _familyMemberPronunciations = [    'Musume ',    'Chichioya ',    'Ojisan ',    'Obaasan ',    'Hahaoya ',    'Ani',    'Ane',    'Musuko',    'Otouto ',    'Imouto ',  ];  final List<String> _familyMemberImages = [    'assets/images/family_daughter.png',    'assets/images/family_father.png',    'assets/images/family_grandfather.png',    'assets/images/family_grandmother.png',    'assets/images/family_mother.png',    'assets/images/family_older_brother.png',    'assets/images/family_older_sister.png',    'assets/images/family_son.png',    'assets/images/family_younger_brother.png',    'assets/images/family_younger_sister.png',  ];  @override  Widget build(BuildContext context) {    return Scaffold(      appBar: AppBar(        title: Text('Family Members'),        backgroundColor: Colors.brown,      ),      body: Container(        color: Colors.white,        child: ListView.builder(          itemCount: _familyMemberNames.length,          itemBuilder: (context, index) {            return Row(              children: [                Container(                  width: MediaQuery                      .of(context)                      .size                      .width / 5,                  height: MediaQuery                      .of(context)                      .size                      .width / 5,                  color: Colors.white,                  child: Image.asset(                    _familyMemberImages[index],                    fit: BoxFit.contain,                  ),                ),                Expanded(                  child: Container(                    color: Colors.green,                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),                    child: Column(                      crossAxisAlignment: CrossAxisAlignment.start,                      children: [                        Text(                          _familyMemberPronunciations[index],                          style: TextStyle(                            fontSize: 20,                            color: Colors.black,                          ),                        ),                        SizedBox(height: 8),                        Row(                          mainAxisAlignment: MainAxisAlignment.spaceBetween,                          children: [                            Text(                              _familyMemberNames[index],                              style: TextStyle(                                fontSize: 20,                                color: Colors.black,                              ),                            ),                            IconButton(                              icon: Icon(Icons.play_arrow),                              onPressed: () async {                                // create an instance of AudioPlayer                                AudioPlayer audioPlayer = AudioPlayer();                                final player = AudioPlayer();                                switch (_familyMemberNames[index]) {                                  case 'Daughter':                                    player.play(AssetSource('sounds/family_members/daughter.wav'));                                    break;                                  case 'Father':                                   player.play(AssetSource('sounds/family_members/father.wav'));                                break;                                case 'Grandfather':                                  player.play(AssetSource('sounds/family_members/grandfather.wav'));                                break;                                case 'Grandmother':                                  player.play(AssetSource('sounds/family_members/grandmother.wav'));                                break;                                case 'Mother':                                  player.play(AssetSource('sounds/family_members/mother.wav'));                                break;                                case 'Older Brother':                                  player.play(AssetSource('sounds/family_members/olderbrother.wav'));                                break;                                case 'Older Sister':                                  player.play(AssetSource('sounds/family_members/oldersister.wav'));                                break;                                case 'Son':                                  player.play(AssetSource('sounds/family_members/son.wav'));                                break;                                case 'Younger Brother':                                  player.play(AssetSource('sounds/family_members/youngerbrother.wav'));                                break;                                case 'Younger Sister':                                  player.play(AssetSource('sounds/family_members/youngersister.wav'));                                break;                                default:                                break;                                }                              },                            ),                          ],                        ),                      ],                    ),                  ),                ),              ],            );          },        ),      ),    );  }}

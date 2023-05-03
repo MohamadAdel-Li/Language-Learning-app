@@ -32,9 +32,8 @@ dependencies:
     sdk: flutter
 
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  audioplayers: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -54,8 +53,29 @@ dev_dependencies:
 flutter:
 
   assets:
+    - assets/images/family_grandfather.png
+    - assets/images/family_grandmother.png
+    - assets/images/family_father.png
+    - assets/images/family_mother.png
+    - assets/images/family_daughter.png
+    - assets/images/family_older_brother.png
+    - assets/images/family_older_sister.png
+    - assets/images/family_son.png
+    - assets/images/family_younger_brother.png
+    - assets/images/family_younger_brother.png
+    - assets/images/family_younger_sister.png
     - assets/images/img.jpg
     - assets/images/pic.jpg
+    - assets/sounds/family_members/grandfather.wav
+    - assets/sounds/family_members/grandmother.wav
+    - assets/sounds/family_members/father.wav
+    - assets/sounds/family_members/mother.wav
+    - assets/sounds/family_members/daughter.wav
+    - assets/sounds/family_members/olderbrother.wav
+    - assets/sounds/family_members/oldersister.wav
+    - assets/sounds/family_members/son.wav
+    - assets/sounds/family_members/youngerbrother.wav
+    - assets/sounds/family_members/youngersister.wav
 
   fonts:
     - family: Pacifico
